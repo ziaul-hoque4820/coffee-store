@@ -1,4 +1,5 @@
 import React from 'react'
+import Swal from 'sweetalert2';
 
 function AddCoffee() {
 
@@ -20,7 +21,17 @@ function AddCoffee() {
             body: JSON.stringify(newCoffee)
         })
             .then(res => res.json())
-            .then(data => { "client side data:", data })
+            .then(data => {
+                if (data.insertedId) {
+                    console.log(data);
+                    Swal.fire({
+                        title: "Coffee Added Successfully",
+                        icon: "success",
+                        draggable: true
+                    });
+                    // form.reset();
+                }
+            })
     }
 
     return (
