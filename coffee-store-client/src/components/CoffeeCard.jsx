@@ -59,7 +59,7 @@ function CoffeeCard({ coffee }) {
 
                 {/* Actions */}
                 <div className="flex md:flex-col gap-2 md:gap-3">
-                    <Link to="" className="btn btn-sm md:btn-md btn-outline">View</Link>
+                    <Link to={`/coffee/${_id}`}  className="btn btn-sm md:btn-md btn-outline">View</Link>
                     <Link to="" className="btn btn-sm md:btn-md btn-outline">Edit</Link>
                     <button onClick={() => handleDelete(_id)} className="btn btn-sm md:btn-md btn-error text-white">Delete</button>
                 </div>
