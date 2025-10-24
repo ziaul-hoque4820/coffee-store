@@ -29,7 +29,7 @@ function AddCoffee() {
                         icon: "success",
                         draggable: true
                     });
-                    // form.reset();
+                    form.reset();
                 }
             })
     }
