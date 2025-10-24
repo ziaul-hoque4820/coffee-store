@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-function CoffeeCard({ coffee }) {
+function CoffeeCard({ coffee, coffees, setCoffees }) {
     const { _id, name, quantity, photo, price } = coffee;
 
     const handleDelete = (_id) => {
@@ -31,6 +31,10 @@ function CoffeeCard({ coffee }) {
                                 text: "Your Coffee has been deleted.",
                                 icon: "success"
                             });
+
+                            // remove the coffee from the state
+                            const updatedCoffee = coffees.filter(cof => cof._id !== _id);
+                            setCoffees(updatedCoffee);
                         }
                     })
             }
@@ -60,7 +64,7 @@ function CoffeeCard({ coffee }) {
                 {/* Actions */}
                 <div className="flex md:flex-col gap-2 md:gap-3">
                     <Link to={`/coffee/${_id}`}  className="btn btn-sm md:btn-md btn-outline">View</Link>
-                    <Link to="" className="btn btn-sm md:btn-md btn-outline">Edit</Link>
+                    <Link to={`/updateCoffee/${_id}`} className="btn btn-sm md:btn-md btn-outline">Edit</Link>
                     <button onClick={() => handleDelete(_id)} className="btn btn-sm md:btn-md btn-error text-white">Delete</button>
                 </div>
             </div>

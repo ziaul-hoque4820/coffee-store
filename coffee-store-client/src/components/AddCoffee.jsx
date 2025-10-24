@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 function AddCoffee() {
@@ -36,6 +37,16 @@ function AddCoffee() {
 
     return (
         <div className='p-24'>
+            {/* Back to home */}
+            <div className="w-full max-w-6xl mb-6">
+                <Link
+                    to="/"
+                    className="text-gray-700 font-medium hover:text-black transition flex items-center gap-1"
+                >
+                    <span className="text-lg">←</span> Back to home
+                </Link>
+            </div>
+
             <div className='p-12 text-center space-y-4'>
                 <h1 className="text-6xl">Add Coffee</h1>
                 <p>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
