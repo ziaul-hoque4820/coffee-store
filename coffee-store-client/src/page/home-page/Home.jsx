@@ -4,6 +4,8 @@ import CoffeeCard from '../../components/CoffeeCard';
 import BannerSection from './BannerSection';
 import FollowingSection from './FollowingSection';
 import FeaturesSection from './FeaturesSection';
+import { BsCupHot } from 'react-icons/bs';
+import { getMoreImageUrl } from '../../utils/utils';
 
 function Home() {
 
@@ -14,23 +16,36 @@ function Home() {
         <section>
             <BannerSection />
             <FeaturesSection />
-            <div className="py-4 md:py-8 px-2 md:px-6">
-                <h1 className="text-2xl md:text-3xl font-bold mb-6 text-center">Our Coffee Collection</h1>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {
-                        coffees.map(coffee => (
-                            <CoffeeCard
-                                key={coffee._id}
-                                coffee={coffee}
-                                coffees={coffees}
-                                setCoffees={setCoffees}
-                            />
-                        ))
-                    }
+            <div
+                className="py-10 md:py-16 px-4 md:px-10 bg-no-repeat bg-cover bg-center mt-5"
+                style={{
+                    backgroundImage: `url(${getMoreImageUrl("1.png")})`,
+                }}
+            >
+                <div className="text-center mb-8">
+                    <p className="text-sm md:text-base italic text-[#331A15]">--- Sip & Savor ---</p>
+                    <h1 className="text-3xl md:text-4xl font-heading text-[#331A15] mt-1">Our Popular Products</h1>
+                    <Link
+                        to={"/addCoffee"}
+                        className="inline-flex items-center gap-2 bg-[#E3B577] text-[#1B1A1A] px-4 py-2 rounded mt-4 hover:bg-[#d5a653] transition-all duration-300"
+                    >
+                        Add Coffee
+                        <BsCupHot className="text-lg" />
+                    </Link>
                 </div>
 
-                <Link to={'/addCoffee'} className="btn btn-sm md:btn-md btn-outline mt-5">Add New Coffee</Link>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                    {coffees.map((coffee) => (
+                        <CoffeeCard
+                            key={coffee._id}
+                            coffee={coffee}
+                            coffees={coffees}
+                            setCoffees={setCoffees}
+                        />
+                    ))}
+                </div>
             </div>
+
             <FollowingSection />
         </section>
     )

@@ -1,14 +1,14 @@
 import React from 'react';
+import { CiEdit } from 'react-icons/ci';
+import { LuView } from 'react-icons/lu';
+import { MdDeleteForever } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 function CoffeeCard({ coffee, coffees, setCoffees }) {
-    const { _id, name, quantity, photo, price } = coffee;
+    const { _id, name, chef, price, photo } = coffee;
 
     const handleDelete = (_id) => {
-        console.log(_id);
-
-
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -19,53 +19,72 @@ function CoffeeCard({ coffee, coffees, setCoffees }) {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                //start Delete functionality
                 fetch(`http://localhost:3000/coffees/${_id}`, {
-                    method: 'DELETE'
+                    method: 'DELETE',
                 })
-                    .then(res => res.json())
-                    .then(data => {
+                    .then((res) => res.json())
+                    .then((data) => {
                         if (data.deletedCount) {
                             Swal.fire({
                                 title: "Deleted!",
                                 text: "Your Coffee has been deleted.",
-                                icon: "success"
+                                icon: "success",
                             });
-
-                            // remove the coffee from the state
-                            const updatedCoffee = coffees.filter(cof => cof._id !== _id);
-                            setCoffees(updatedCoffee);
+                            const updated = coffees.filter((c) => c._id !== _id);
+                            setCoffees(updated);
                         }
-                    })
+                    });
             }
         });
-    }
+    };
 
     return (
-        <div className="flex flex-col md:flex-row bg-base-100 shadow-md border rounded-xl overflow-hidden py-2 md:py-4">
+        <div className="flex flex-col md:flex-row items-center justify-between bg-[#F5F4F1] border border-gray-200 rounded-lg p-5 md:p-6">
             {/* Image */}
-            <figure className="w-full md:w-1/3 flex justify-center items-center p-2">
+            <figure className="w-full md:w-1/3 flex justify-center items-center">
                 <img
                     src={photo}
                     alt={name}
-                    className="w-full h-40 md:h-48 object-cover rounded-lg"
+                    className="w-28 h-28 md:w-32 md:h-32 object-contain"
                 />
             </figure>
 
-            {/* Content Section */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full px-4 md:px-6 py-2 gap-4">
-                {/* Coffee Info */}
-                <div className="flex flex-col space-y-1">
-                    <h2 className="text-lg md:text-xl font-semibold text-gray-800">{name}</h2>
-                    <p className="text-gray-600 text-sm md:text-base">Price: <span className="font-medium">${price}</span></p>
-                    <p className="text-gray-600 text-sm md:text-base">Quantity: {quantity}</p>
+            {/* Info */}
+            <div className="flex flex-col justify-center md:w-2/3 md:flex-row md:justify-between items-start md:items-center gap-4 w-full">
+                <div>
+                    <p className="text-[#331A15] font-semibold">
+                        <span className="font-bold text-[#1B1A1A]">Name:</span> {name}
+                    </p>
+                    <p className="text-[#331A15]">
+                        <span className="font-bold text-[#1B1A1A]">Chef:</span> {chef}
+                    </p>
+                    <p className="text-[#331A15]">
+                        <span className="font-bold text-[#1B1A1A]">Price:</span> {price} Taka
+                    </p>
                 </div>
 
-                {/* Actions */}
+                {/* Buttons */}
                 <div className="flex md:flex-col gap-2 md:gap-3">
-                    <Link to={`/coffee/${_id}`}  className="btn btn-sm md:btn-md btn-outline">View</Link>
-                    <Link to={`/updateCoffee/${_id}`} className="btn btn-sm md:btn-md btn-outline">Edit</Link>
-                    <button onClick={() => handleDelete(_id)} className="btn btn-sm md:btn-md btn-error text-white">Delete</button>
+                    <Link
+                        to={`/coffee/${_id}`}
+                        className="bg-[#E3B577] text-white p-2 rounded hover:bg-[#cba25d] transition-colors"
+                    >
+                        <LuView className="text-lg" />
+                    </Link>
+
+                    <Link
+                        to={`/updateCoffee/${_id}`}
+                        className="bg-[#1B1A1A] text-white p-2 rounded hover:bg-[#3b3b3b] transition-colors"
+                    >
+                        <CiEdit className="text-lg" />
+                    </Link>
+
+                    <button
+                        onClick={() => handleDelete(_id)}
+                        className="bg-[#E74C3C] text-white p-2 rounded hover:bg-[#c0392b] transition-colors"
+                    >
+                        <MdDeleteForever className="text-lg" />
+                    </button>
                 </div>
             </div>
         </div>
