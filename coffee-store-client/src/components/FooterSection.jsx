@@ -1,5 +1,5 @@
 import React from "react";
-import { getMoreImageUrl } from "../utils/utils";
+import { getMoreImageUrl } from "../utils/utils.js";
 import { FaFacebook, FaInstagram, FaLinkedin, FaPhone, FaTwitter } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoLocationSharp } from "react-icons/io5";
