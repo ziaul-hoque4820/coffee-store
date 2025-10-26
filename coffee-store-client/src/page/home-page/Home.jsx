@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useLoaderData } from 'react-router-dom';
 import CoffeeCard from '../../components/CoffeeCard';
 import BannerSection from './BannerSection';
+import FollowingSection from './FollowingSection';
 
 function Home() {
 
@@ -28,6 +29,7 @@ function Home() {
 
                 <Link to={'/addCoffee'} className="btn btn-sm md:btn-md btn-outline mt-5">Add New Coffee</Link>
             </div>
+            <FollowingSection />
         </section>
     )
 }

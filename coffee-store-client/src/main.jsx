@@ -4,8 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css'
 import App from './App.jsx'
 import MainLayout from './layout/MainLayout.jsx';
-import AddCoffee from './components/AddCoffee.jsx';
-import UpdateCoffee from './components/UpdateCoffee.jsx';
+import AddCoffee from './page/add-coffee/AddCoffee.jsx';
+import UpdateCoffee from './page/update-coffee/UpdateCoffee.jsx';
 import CoffeeDetails from './components/CoffeeDetails.jsx';
 import Home from './page/home-page/Home.jsx';
 
