@@ -6,15 +6,18 @@ import { IoLocationSharp } from "react-icons/io5";
 
 function FooterSection() {
     return (
-        <section
-            className="bg-cover bg-center bg-no-repeat py-16 px-6 sm:px-10 md:px-16 lg:px-24"
-            style={{
-                backgroundImage: `url(${getMoreImageUrl("13.jpg")})`,
-            }}
-        >
-            <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                {/* Left Side */}
-                <div>
+        <section className="w-full bg-transparent">
+            <div
+                className="max-w-screen-xl mx-auto px-4 sm:px-6 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-start overflow-hidden"
+                style={{
+                    backgroundImage: `url(${getMoreImageUrl("13.jpg")})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                }}
+            >
+                {/* LEFT */}
+                <div className="py-8">
                     <img
                         src={getMoreImageUrl("logo1.png")}
                         alt="logo"
@@ -28,7 +31,6 @@ function FooterSection() {
                         memorable moments, to share with your best companion.
                     </p>
 
-                    {/* Social Icons */}
                     <div className="flex items-center gap-4 text-[#331A15] text-xl mb-8">
                         <FaFacebook className="cursor-pointer" />
                         <FaTwitter className="cursor-pointer" />
@@ -36,10 +38,7 @@ function FooterSection() {
                         <FaLinkedin className="cursor-pointer" />
                     </div>
 
-                    <h4 className="text-2xl font-heading text-[#331A15] mb-4">
-                        Get in Touch
-                    </h4>
-
+                    <h4 className="text-2xl font-heading text-[#331A15] mb-4">Get in Touch</h4>
                     <div className="space-y-3 text-[#1B1A1A] font-body">
                         <div className="flex items-center gap-3">
                             <FaPhone className="text-[#331A15]" />
@@ -56,27 +55,27 @@ function FooterSection() {
                     </div>
                 </div>
 
-                {/* Right Side - Contact Form */}
-                <div className="my-auto">
+                {/* RIGHT */}
+                <div className="py-8 my-auto">
                     <h3 className="text-3xl font-heading text-[#331A15] mb-6">
                         Connect with Us
                     </h3>
 
-                    <form className="flex flex-col gap-4">
+                    <form className="flex flex-col gap-4 bg-transparent">
                         <input
                             type="text"
                             placeholder="Name"
-                            className="w-full p-3 border border-transparent bg-white focus:border-[#E3B577] outline-none text-[#1B1A1A] font-body"
+                            className="w-full p-3 bg-white/90 focus:border-[#E3B577] outline-none text-[#1B1A1A] font-body"
                         />
                         <input
                             type="email"
                             placeholder="Email"
-                            className="w-full p-3 border border-transparent bg-white focus:border-[#E3B577] outline-none text-[#1B1A1A] font-body"
+                            className="w-full p-3 bg-white/90 focus:border-[#E3B577] outline-none text-[#1B1A1A] font-body"
                         />
                         <textarea
                             placeholder="Message"
                             rows="4"
-                            className="w-full p-3 border border-transparent bg-white focus:border-[#E3B577] outline-none text-[#1B1A1A] font-body resize-none"
+                            className="w-full p-3 bg-white/90 focus:border-[#E3B577] outline-none text-[#1B1A1A] font-body resize-none"
                         ></textarea>
 
                         <button
