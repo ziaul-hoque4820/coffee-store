@@ -41,7 +41,7 @@ function AddCoffee() {
             <div className="w-full max-w-6xl mb-6">
                 <Link
                     to="/"
-                    className="text-gray-700 font-medium hover:text-black transition flex items-center gap-1"
+                    className="text-gray-700 font-bold font-heading text-xl hover:text-black transition flex items-center gap-1"
                 >
                     <span className="text-lg">←</span> Back to home
                 </Link>
@@ -54,36 +54,36 @@ function AddCoffee() {
             <form onSubmit={handleAddCoffee}>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-                        <label className="label">Name</label>
+                        <label className="label font-heading text-xl">Name</label>
                         <input type="text" name='name' className="input w-full" placeholder="Coffee Name" />
                     </fieldset>
                     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-                        <label className="label">Quantity</label>
+                        <label className="label font-heading text-xl">Quantity</label>
                         <input type="text" name='quantity' className="input w-full" placeholder="Quantity Name" />
                     </fieldset>
                     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-                        <label className="label">Supplier</label>
+                        <label className="label font-heading text-xl">Supplier</label>
                         <input type="text" name='supplier' className="input w-full" placeholder="Supplier Name" />
                     </fieldset>
                     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-                        <label className="label">Taste</label>
+                        <label className="label font-heading text-xl">Taste</label>
                         <input type="text" name='taste' className="input w-full" placeholder="Taste Name" />
                     </fieldset>
                     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-                        <label className="label">Price</label>
+                        <label className="label font-heading text-xl">Price</label>
                         <input type="text" name='price' className="input w-full" placeholder="Price per Cup" />
                     </fieldset>
                     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-                        <label className="label">Details</label>
+                        <label className="label font-heading text-xl">Details</label>
                         <input type="text" name='details' className="input w-full" placeholder="Details Name" />
                     </fieldset>
                 </div>
                 <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border my-6 p-4">
-                    <label className="label">Photo</label>
+                    <label className="label font-heading text-xl">Photo</label>
                     <input type="text" name='photo' className="input w-full" placeholder="Photo URL" />
                 </fieldset>
 
-                <input type="submit" className='btn w-full' value="Add Coffee" />
+                <input type="submit" className='btn w-full bg-[#D2B48C] text-white font-heading text-xl rounded-[5px] border border-transparent hover:bg-[#b49d7e] hover:border-[#cab495] transition-all duration-300 cursor-pointer' value="Add Coffee" />
             </form>
         </div>
     )

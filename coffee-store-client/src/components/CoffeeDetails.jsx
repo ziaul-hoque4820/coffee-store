@@ -29,7 +29,7 @@ function CoffeeDetails() {
             <div className="w-full max-w-6xl mb-6">
                 <Link
                     to="/"
-                    className="text-gray-700 font-medium hover:text-black transition flex items-center gap-1"
+                    className="text-gray-700 font-bold font-heading text-xl hover:text-black transition flex items-center gap-1"
                 >
                     <span className="text-lg">←</span> Back to home
                 </Link>
