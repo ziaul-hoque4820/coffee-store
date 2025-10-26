@@ -2,6 +2,7 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Header from '../components/Header'
 import FooterSection from '../components/FooterSection'
+import CopyRight from '../components/CopyRight'
 
 function MainLayout() {
     return (
@@ -11,6 +12,7 @@ function MainLayout() {
                 <Outlet></Outlet>
             </div>
             <FooterSection />
+            <CopyRight />
         </div>
     )
 }
