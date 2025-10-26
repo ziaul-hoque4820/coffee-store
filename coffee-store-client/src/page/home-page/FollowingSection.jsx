@@ -47,7 +47,7 @@ function FollowingSection() {
     ];
 
     return (
-        <section className="w-full bg-[#f1f1f1] py-16 px-6 sm:px-10 md:px-16 lg:px-15">
+        <section className="w-full bg-[#f1f1f1] py-16 px-6 sm:px-10 md:px-6 lg:px-8">
             {/* Section Heading */}
             <div className="text-center mb-12">
                 <span className="text-[#331A15] text-lg font-body">Follow Us Now</span>
@@ -57,7 +57,7 @@ function FollowingSection() {
             </div>
 
             {/* Grid Layout */}
-            <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {followings.map((item, index) => (
                     <div
                         key={index}

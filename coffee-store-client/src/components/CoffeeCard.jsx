@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 function CoffeeCard({ coffee, coffees, setCoffees }) {
-    const { _id, name, chef, price, photo } = coffee;
+    const { _id, name, supplier, price, photo } = coffee;
 
     const handleDelete = (_id) => {
         Swal.fire({
@@ -39,7 +39,7 @@ function CoffeeCard({ coffee, coffees, setCoffees }) {
     };
 
     return (
-        <div className="flex flex-col md:flex-row items-center justify-between bg-[#F5F4F1] border border-gray-200 rounded-lg p-5 md:p-6">
+        <div className="flex flex-col md:flex-row items-center justify-between bg-white/70 border border-gray-200 rounded-lg p-5 md:p-6">
             {/* Image */}
             <figure className="w-full md:w-1/3 flex justify-center items-center">
                 <img
@@ -56,7 +56,7 @@ function CoffeeCard({ coffee, coffees, setCoffees }) {
                         <span className="font-bold text-[#1B1A1A]">Name:</span> {name}
                     </p>
                     <p className="text-[#331A15]">
-                        <span className="font-bold text-[#1B1A1A]">Chef:</span> {chef}
+                        <span className="font-bold text-[#1B1A1A]">Supplier:</span> {supplier}
                     </p>
                     <p className="text-[#331A15]">
                         <span className="font-bold text-[#1B1A1A]">Price:</span> {price} Taka
@@ -81,7 +81,7 @@ function CoffeeCard({ coffee, coffees, setCoffees }) {
 
                     <button
                         onClick={() => handleDelete(_id)}
-                        className="bg-[#E74C3C] text-white p-2 rounded hover:bg-[#c0392b] transition-colors"
+                        className="bg-[#E74C3C] text-white p-2 rounded hover:bg-[#c0392b] transition-colors cursor-pointer"
                     >
                         <MdDeleteForever className="text-lg" />
                     </button>

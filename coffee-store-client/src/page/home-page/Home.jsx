@@ -23,7 +23,6 @@ function Home() {
                 }}
             >
                 <div className="text-center mb-8">
-                    <p className="text-sm md:text-base italic text-[#331A15]">--- Sip & Savor ---</p>
                     <h1 className="text-3xl md:text-4xl font-heading text-[#331A15] mt-1">Our Popular Products</h1>
                     <Link
                         to={"/addCoffee"}

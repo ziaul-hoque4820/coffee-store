@@ -13,7 +13,7 @@ function CopyRight() {
                     backgroundRepeat: 'no-repeat',
                 }}
             >
-                <footer className="text-center text-white font-body text-sm sm:text-base py-3">
+                <footer className="text-center text-white font-heading text-xl tracking-wide">
                     © {new Date().getFullYear()} Espresso Emporium | All Rights Reserved
                 </footer>
             </div>
