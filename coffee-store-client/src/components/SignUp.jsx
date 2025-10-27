@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { use } from 'react'
+import { AuthContext } from '../contexts/AuthContext'
 
 function SignUp() {
+    const {user} = use(AuthContext);
+    console.log(user);
+    
+    
     return (
         <div className="card bg-base-100 max-w-sm mx-auto shrink-0 shadow-2xl">
             <div className="card-body">
