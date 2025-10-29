@@ -73,6 +73,12 @@ async function run() {
         })
 
         // Users related APIs
+        app.get('/users', async (req, res) => {
+            const result = await usersCollection.find().toArray();
+            res.send(result);
+        })
+
+
         app.post('/users', async (req, res) => {
             const newUsers = req.body;
             console.log('add user');
