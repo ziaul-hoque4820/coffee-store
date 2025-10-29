@@ -30,8 +30,9 @@ async function run() {
         await client.connect();
 
         const coffeeCollection = client.db("coffeeDB").collection('coffees');
+        const usersCollection = client.db("coffeeDB").collection('users');
 
-
+        // Coffees data related APIs
         app.get('/coffees', async (req, res) => {
             const cursor = coffeeCollection.find();
             const result = await cursor.toArray();
@@ -71,6 +72,13 @@ async function run() {
             res.send(result);
         })
 
+        // Users related APIs
+        app.post('/users', async (req, res) => {
+            const newUsers = req.body;
+            console.log('add user');
+            const result = await usersCollection.insertOne(newUsers);
+            res.send(result);
+        })
 
 
         // Send a ping to confirm a successful connection

@@ -1,10 +1,11 @@
 import React from 'react'
 
 function SignIn() {
+    
     return (
         <div className="card bg-base-100 max-w-sm mx-auto shrink-0 shadow-2xl">
             <div className="card-body">
-                <h1 className="text-5xl font-bold">Sign In now!</h1>
+                <h2 className="text-5xl font-bold">Sign In now!</h2>
                 <form className="fieldset">
 
                     <label className="label">Email</label>

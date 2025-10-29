@@ -1,16 +1,63 @@
 import React, { use } from 'react'
 import { AuthContext } from '../contexts/AuthContext'
+import Swal from 'sweetalert2';
 
 function SignUp() {
-    const {user} = use(AuthContext);
-    console.log(user);
-    
-    
+    const { createUser } = use(AuthContext);
+
+    const handleSignUp = (e) => {
+        e.preventDefault();
+        const form = e.target;
+
+        const formData = new FormData(form);
+        const { email, password, ...restFormData } = Object.fromEntries(formData.entries());
+
+        // create user in firebase
+        createUser(email, password)
+            .then(result => {
+                console.log(result);
+
+                const userProfile = {
+                    email,
+                    ...restFormData,
+                    creationTime: result.user?.metadata?.creationTime,
+                    lastSignInTime: result.user?.metadata?.lastSignInTime
+                }
+
+                // seve profile info in the DB
+                fetch('http://localhost:3000/users', {
+                    method: "POST",
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(userProfile)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log('after profile save', data);
+                        if (data.insertedId) {
+                            Swal.fire({
+                                position: "top-end",
+                                icon: "success",
+                                title: "Your work has been saved",
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                            form.reset();
+                        }
+                    })
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+
     return (
         <div className="card bg-base-100 max-w-sm mx-auto shrink-0 shadow-2xl">
             <div className="card-body">
-                <h1 className="text-5xl font-bold">Sign Up now!</h1>
-                <form className="fieldset">
+                <h2 className="text-5xl font-bold">Sign Up now !</h2>
+                <form onSubmit={handleSignUp} className="fieldset">
                     <label className="label">Name</label>
                     <input type="text" name="name" className="input" placeholder="Name" />
                     <label className="label">Address</label>
