@@ -1,9 +1,9 @@
-import React, { use } from 'react'
+import { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext'
 import Swal from 'sweetalert2';
 
 function SignUp() {
-    const { createUser } = use(AuthContext);
+    const { createUser } = useContext(AuthContext);
 
     const handleSignUp = (e) => {
         e.preventDefault();
