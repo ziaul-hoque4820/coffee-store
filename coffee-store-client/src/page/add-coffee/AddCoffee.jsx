@@ -14,7 +14,7 @@ function AddCoffee() {
         console.log(newCoffee);
 
         // send coffee data to the DB
-        fetch('http://localhost:3000/coffees', {
+        fetch('https://coffee-store-1.onrender.com/coffees', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

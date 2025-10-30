@@ -25,7 +25,7 @@ function SignUp() {
                 }
 
                 // seve profile info in the DB
-                fetch('http://localhost:3000/users', {
+                fetch('https://coffee-store-1.onrender.com/users', {
                     method: "POST",
                     headers: {
                         'content-type': 'application/json'

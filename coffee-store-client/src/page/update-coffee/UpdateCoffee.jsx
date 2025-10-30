@@ -14,7 +14,7 @@ function UpdateCoffee() {
 
 
         // send updated coffee data to the DB
-        fetch(`http://localhost:3000/coffees/${_id}`, {
+        fetch(`https://coffee-store-1.onrender.com/coffees/${_id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
