@@ -3,12 +3,11 @@ import { getImageUrl, getMoreImageUrl } from '../utils/utils'
 
 function Header() {
     return (
-        <header className="w-full bg-transparent">
+        <header>
             <div
-                className="max-w-screen-xl mx-auto bg-cover bg-center relative flex items-center justify-center px-4 sm:px-6 md:px-8 overflow-hidden"
+                className="w-full h-[100px] sm:h-[120px] md:h-[120px] bg-cover bg-center relative flex items-center justify-center"
                 style={{
                     backgroundImage: `url(${getImageUrl("header-bg.png")})`,
-                    minHeight: '120px'
                 }}
             >
                 <div className="absolute inset-0 bg-black/40"></div>
