@@ -26,15 +26,11 @@ function FeaturesSection() {
     ];
 
     return (
-        <section className="w-full bg-[#f2eee8] py-16 px-6 sm:px-10 md:px-16 lg:px-24">
-            <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-center">
+        <section className="w-full bg-[#f2eee8] py-16">
+            <div className="max-w-screen-xl mx-auto px-6 sm:px-10 md:px-16 lg:px-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-center">
                 {features.map((item, index) => (
                     <div key={index} className="flex flex-col items-center">
-                        <img
-                            src={item.icon}
-                            alt={item.title}
-                            className="w-14 h-14 mb-4"
-                        />
+                        <img src={item.icon} alt={item.title} className="w-14 h-14 mb-4" />
                         <h3 className="font-heading text-xl text-[#331A15] font-semibold mb-2">
                             {item.title}
                         </h3>
@@ -45,6 +41,7 @@ function FeaturesSection() {
                 ))}
             </div>
         </section>
+
     );
 }
 

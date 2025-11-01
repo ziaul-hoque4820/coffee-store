@@ -3,14 +3,11 @@ import { getImageUrl } from "../utils/utils";
 
 function CopyRight() {
     return (
-        <section className="w-full bg-transparent">
+        <section>
             <div
-                className="max-w-screen-xl mx-auto px-4 sm:px-6 md:px-8"
+                className="w-full bg-cover bg-center py-4 sm:py-5"
                 style={{
                     backgroundImage: `url(${getImageUrl("header-bg.png")})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
                 }}
             >
                 <footer className="text-center text-white font-heading text-xl tracking-wide">

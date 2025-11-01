@@ -10,7 +10,7 @@ function MainLayout() {
         <div>
             <ScrollToTop />
             <Header></Header>
-            <div className='max-w-7xl mx-auto'>
+            <div>
                 <Outlet></Outlet>
             </div>
             <FooterSection />
