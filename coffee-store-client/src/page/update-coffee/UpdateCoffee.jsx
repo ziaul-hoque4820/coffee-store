@@ -35,7 +35,7 @@ function UpdateCoffee() {
     }
 
     return (
-        <div className='p-24'>
+        <div className='py-20 px-4 md:px-10 lg:px-10 xl:px-10 max-w-6xl mx-auto'>
             {/* Back to home */}
             <div className="w-full max-w-6xl mb-6">
                 <Link
