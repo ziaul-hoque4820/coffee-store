@@ -44,7 +44,7 @@ function Users() {
         <div className='min-h-96'>
             <h2 className="text-3xl text-center my-5">Users: {initialUsers.length}</h2>
 
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto w-full px-4 md:px-10 lg:px-10 xl:px-10">
                 <table className="table">
                     {/* head */}
                     <thead>
@@ -83,7 +83,7 @@ function Users() {
                                     {user.phone}
                                 </td>
                                 <td>{user.email}</td>
-                                <th>
+                                <th className='flex justify-center items-center'>
                                     <button className="btn btn-xs mr-1">
                                         <LuView className="text-lg text-blue-500" />
                                     </button>
