@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useLoaderData } from 'react-router-dom';
 import CoffeeCard from '../../components/CoffeeCard';
 import BannerSection from './BannerSection';
@@ -6,11 +6,13 @@ import FollowingSection from './FollowingSection';
 import FeaturesSection from './FeaturesSection';
 import { BsCupHot } from 'react-icons/bs';
 import { getMoreImageUrl } from '../../utils/utils';
+import { AuthContext } from '../../contexts/AuthContext';
 
 function Home() {
 
     const initialCoffees = useLoaderData();
     const [coffees, setCoffees] = useState(initialCoffees);
+    const { user } = useContext(AuthContext);
 
     return (
         <section>
@@ -29,13 +31,15 @@ function Home() {
                         <h1 className="text-3xl md:text-4xl font-heading text-[#331A15] mt-1">
                             Our Popular Products
                         </h1>
-                        <Link
-                            to={"/addCoffee"}
-                            className="inline-flex items-center gap-2 bg-[#E3B577] text-[#1B1A1A] px-4 py-2 rounded mt-4 hover:bg-[#d5a653] transition-all duration-300"
-                        >
-                            Add Coffee
-                            <BsCupHot className="text-lg" />
-                        </Link>
+                        {user && (
+                            <Link
+                                to={"/addCoffee"}
+                                className="inline-flex items-center gap-2 bg-[#E3B577] text-[#1B1A1A] px-4 py-2 rounded mt-4 hover:bg-[#d5a653] transition-all duration-300"
+                            >
+                                Add Coffee
+                                <BsCupHot className="text-lg" />
+                            </Link>
+                        )}
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">

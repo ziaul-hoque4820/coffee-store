@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { CiEdit } from 'react-icons/ci';
 import { LuView } from 'react-icons/lu';
 import { MdDeleteForever } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../contexts/AuthContext';
 
 function CoffeeCard({ coffee, coffees, setCoffees }) {
     const { _id, name, supplier, price, photo } = coffee;
+    const { user } = useContext(AuthContext);
 
     const handleDelete = (_id) => {
         Swal.fire({
@@ -65,26 +67,30 @@ function CoffeeCard({ coffee, coffees, setCoffees }) {
 
                 {/* Buttons */}
                 <div className="flex md:flex-col gap-2 md:gap-3">
-                    <Link
-                        to={`/coffee/${_id}`}
-                        className="bg-[#E3B577] text-white p-2 rounded hover:bg-[#cba25d] transition-colors"
-                    >
-                        <LuView className="text-lg" />
-                    </Link>
+                    {user && (
+                        <>
+                            <Link
+                                to={`/coffee/${_id}`}
+                                className="bg-[#E3B577] text-white p-2 rounded hover:bg-[#cba25d] transition-colors"
+                            >
+                                <LuView className="text-lg" />
+                            </Link>
 
-                    <Link
-                        to={`/updateCoffee/${_id}`}
-                        className="bg-[#1B1A1A] text-white p-2 rounded hover:bg-[#3b3b3b] transition-colors"
-                    >
-                        <CiEdit className="text-lg" />
-                    </Link>
+                            <Link
+                                to={`/updateCoffee/${_id}`}
+                                className="bg-[#1B1A1A] text-white p-2 rounded hover:bg-[#3b3b3b] transition-colors"
+                            >
+                                <CiEdit className="text-lg" />
+                            </Link>
 
-                    <button
-                        onClick={() => handleDelete(_id)}
-                        className="bg-[#E74C3C] text-white p-2 rounded hover:bg-[#c0392b] transition-colors cursor-pointer"
-                    >
-                        <MdDeleteForever className="text-lg" />
-                    </button>
+                            <button
+                                onClick={() => handleDelete(_id)}
+                                className="bg-[#E74C3C] text-white p-2 rounded hover:bg-[#c0392b] transition-colors cursor-pointer"
+                            >
+                                <MdDeleteForever className="text-lg" />
+                            </button>
+                        </>
+                    )}
                 </div>
             </div>
         </div>

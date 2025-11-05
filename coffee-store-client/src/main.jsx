@@ -12,42 +12,47 @@ import SignIn from './components/SignIn.jsx';
 import SignUp from './components/SignUp.jsx';
 import AuthProvider from './contexts/AuthProvider.jsx';
 import Users from './components/Users.jsx';
+import PrivateRoute from './routes/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
     {
         path: "/",
-        Component: MainLayout,
+        element: <MainLayout />,
         children: [
             {
                 index: true,
                 loader: () => fetch('https://coffee-store-1.onrender.com/coffees'),
-                Component: Home
+                element: <Home />
             },
             {
                 path: 'addCoffee',
-                Component: AddCoffee
+                element: <PrivateRoute>
+                    <AddCoffee />
+                </PrivateRoute>
             },
             {
                 path: 'coffee/:id',
-                Component: CoffeeDetails
+                element: <CoffeeDetails />
             },
             {
                 path: 'updateCoffee/:id',
                 loader: ({ params }) => fetch(`https://coffee-store-1.onrender.com/coffees/${params.id}`),
-                Component: UpdateCoffee
+                element: <PrivateRoute>
+                    <UpdateCoffee />
+                </PrivateRoute>
             },
             {
                 path: 'signin',
-                Component: SignIn
+                element: <SignIn />
             },
             {
                 path: 'signup',
-                Component: SignUp
+                element: <SignUp />
             },
             {
                 path: 'users',
                 loader: () => fetch('https://coffee-store-1.onrender.com/users'),
-                Component: Users
+                element: <Users />
             },
         ]
     }
