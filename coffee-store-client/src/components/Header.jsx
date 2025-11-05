@@ -1,5 +1,5 @@
 import React, { useState, useRef, useContext, useEffect } from "react";
-import { getImageUrl, getMoreImageUrl } from "../utils/utils"; // তোমার utils যদি থাকে
+import { getImageUrl, getMoreImageUrl } from "../utils/utils";
 import { Link, Links } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
 
@@ -76,7 +76,7 @@ export default function Header() {
                                 >
                                     <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-white/30">
                                         <img
-                                            src={user.photoURL || getMoreImageUrl("default-avatar.png")}
+                                            src={user.photoURL || getImageUrl("avater.jpg")}
                                             alt={user.displayName || "User"}
                                             className="w-full h-full object-cover"
                                         />
@@ -90,7 +90,7 @@ export default function Header() {
                                                 <div className="w-12 h-12 rounded-full overflow-hidden">
                                                     <img
                                                         alt="User Profile"
-                                                        src={user.photoURL || getMoreImageUrl("default-avatar.png")}
+                                                        src={user.photoURL || getImageUrl("avater.jpg")}
                                                         className="w-full h-full object-cover"
                                                     />
                                                 </div>
