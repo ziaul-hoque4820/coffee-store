@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext'
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function SignUp() {
     const { createUser } = useContext(AuthContext);
@@ -65,6 +65,15 @@ function SignUp() {
         <div className="card bg-base-100 max-w-sm mx-auto shrink-0 shadow-2xl">
             <div className="card-body">
                 <h2 className="text-5xl font-bold">Sign Up now !</h2>
+                <div className="w-full max-w-6xl mb-6">
+                    <p className='text-3xl font-bold font-heading'>or</p>
+                    <Link
+                        to="/"
+                        className="text-gray-700 font-bold font-heading text-xl hover:text-black transition flex items-center gap-1"
+                    >
+                        <span className="text-lg">←</span> Back to home
+                    </Link>
+                </div>
                 <form onSubmit={handleSignUp} className="fieldset">
                     <label className="label">Name</label>
                     <input type="text" name="name" className="input" placeholder="Name" />

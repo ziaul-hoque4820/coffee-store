@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 function SignIn() {
@@ -52,6 +52,15 @@ function SignIn() {
         <div className="card bg-base-100 max-w-sm mx-auto shrink-0 shadow-2xl">
             <div className="card-body">
                 <h2 className="text-5xl font-bold">Sign In now!</h2>
+                <div className="w-full max-w-6xl mb-6">
+                    <p className='text-3xl font-bold font-heading'>or</p>
+                    <Link
+                        to="/"
+                        className="text-gray-700 font-bold font-heading text-xl hover:text-black transition flex items-center gap-1"
+                    >
+                        <span className="text-lg">←</span> Back to home
+                    </Link>
+                </div>
                 <form onSubmit={handleSignIn} className="fieldset">
                     <label className="label">Email</label>
                     <input type="email" name="email" className="input" placeholder="Email" />
