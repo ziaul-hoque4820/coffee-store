@@ -1,9 +1,11 @@
 import { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 function SignIn() {
     const { signInUser } = useContext(AuthContext);
-
+    const navigate = useNavigate();
 
     const handleSignIn = (e) => {
         e.preventDefault();
@@ -32,11 +34,17 @@ function SignIn() {
                     .then(data => {
                         console.log('after update patch', data)
                     });
-                    form.reset();
+                form.reset();
+                navigate('/');
 
             })
             .catch(error => {
                 console.log(error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Login Failed',
+                    text: error.message || 'Invalid credentials. Please try again.',
+                });
             })
     }
 

@@ -1,9 +1,11 @@
 import { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext'
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 function SignUp() {
     const { createUser } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleSignUp = (e) => {
         e.preventDefault();
@@ -44,11 +46,17 @@ function SignUp() {
                                 timer: 1500
                             });
                             form.reset();
+                            navigate('/');
                         }
                     })
             })
             .catch(error => {
                 console.log(error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Registration Failed',
+                    text: error.message || 'Please check your info and try again.',
+                });
             })
     }
 
