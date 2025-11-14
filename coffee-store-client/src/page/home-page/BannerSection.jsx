@@ -1,16 +1,16 @@
 import React from "react";
 import { getMoreImageUrl } from "../../utils/utils";
 
-
 function BannerSection() {
     return (
         <section
-            className="w-full bg-cover bg-center bg-no-repeat relative flex items-center"
+            className="w-full bg-cover bg-center bg-no-repeat relative flex items-center z-0"
             style={{
                 backgroundImage: `url(${getMoreImageUrl("3.png")})`,
             }}
         >
-            <div className="absolute inset-0 bg-black/40"></div>
+            {/* Overlay should stay at lowest level */}
+            <div className="absolute inset-0 bg-black/40 z-0"></div>
 
             <div className="relative z-10 max-w-screen-xl mx-auto px-6 sm:px-10 md:px-16 lg:px-24 py-24 md:py-40 flex items-center justify-end">
                 <div className="w-full md:w-1/2 text-white text-center md:text-left">
@@ -30,7 +30,6 @@ function BannerSection() {
                 </div>
             </div>
         </section>
-
     );
 }
 
