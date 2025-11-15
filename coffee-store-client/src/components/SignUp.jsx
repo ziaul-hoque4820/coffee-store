@@ -76,17 +76,17 @@ function SignUp() {
                 </div>
                 <form onSubmit={handleSignUp} className="fieldset">
                     <label className="label">Name</label>
-                    <input type="text" name="name" className="input" placeholder="Name" />
+                    <input type="text" name="name" className="input" placeholder="Name" required />
                     <label className="label">Address</label>
-                    <input type="text" name="address" className="input" placeholder="Address" />
+                    <input type="text" name="address" className="input" placeholder="Address" required />
                     <label className="label">Phone</label>
-                    <input type="text" name="phone" className="input" placeholder="Phone NUmber" />
+                    <input type="text" name="phone" className="input" placeholder="Phone NUmber" required />
                     <label className="label">photo</label>
-                    <input type="text" name="photo" className="input" placeholder="Photo URL" />
+                    <input type="text" name="photo" className="input" placeholder="Photo URL" required />
                     <label className="label">Email</label>
-                    <input type="email" name="email" className="input" placeholder="Email" />
+                    <input type="email" name="email" className="input" placeholder="Email" required />
                     <label className="label">Password</label>
-                    <input type="password" name='password' className="input" placeholder="Password" />
+                    <input type="password" name='password' className="input" placeholder="Password" required />
                     <div><a className="link link-hover">Forgot password?</a></div>
                     <button className="btn btn-neutral mt-4">Sign up</button>
                 </form>

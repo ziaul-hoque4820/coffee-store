@@ -63,9 +63,9 @@ function SignIn() {
                 </div>
                 <form onSubmit={handleSignIn} className="fieldset">
                     <label className="label">Email</label>
-                    <input type="email" name="email" className="input" placeholder="Email" />
+                    <input type="email" name="email" className="input" placeholder="Email" required />
                     <label className="label">Password</label>
-                    <input type="password" name='password' className="input" placeholder="Password" />
+                    <input type="password" name='password' className="input" placeholder="Password" required />
                     <div><a className="link link-hover">Forgot password?</a></div>
                     <button className="btn btn-neutral mt-4">Sign in</button>
                 </form>

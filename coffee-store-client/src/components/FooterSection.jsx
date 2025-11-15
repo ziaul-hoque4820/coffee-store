@@ -66,16 +66,19 @@ function FooterSection() {
                         <input
                             type="text"
                             placeholder="Name"
+                            required
                             className="w-full p-3 border border-transparent bg-white focus:border-[#E3B577] outline-none text-[#1B1A1A] font-body"
                         />
                         <input
                             type="email"
                             placeholder="Email"
+                            required
                             className="w-full p-3 border border-transparent bg-white focus:border-[#E3B577] outline-none text-[#1B1A1A] font-body"
                         />
                         <textarea
                             placeholder="Message"
                             rows="4"
+                            required
                             className="w-full p-3 border border-transparent bg-white focus:border-[#E3B577] outline-none text-[#1B1A1A] font-body resize-none"
                         ></textarea>
 
