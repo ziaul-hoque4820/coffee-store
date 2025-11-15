@@ -36,13 +36,15 @@ export default function Header() {
             <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="h-[90px] sm:h-[110px] md:h-[120px] flex items-center justify-between">
 
-                    <div className="w-1/3" />
+                    <div className="w-1/3 hidden md:block" />
 
-                    {/* Centered Logo (clickable now) */}
                     <Link
                         to="/"
-                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 
-                                   flex items-center gap-3 z-[200]"
+                        className="
+        flex items-center gap-3 z-[50]
+        md:absolute md:left-1/2 md:top-1/2 
+        md:-translate-x-1/2 md:-translate-y-1/2
+    "
                     >
                         <img
                             className="w-[55px] h-[70px] sm:w-[65px] sm:h-[80px] md:w-[75px] md:h-[90px] object-contain"
