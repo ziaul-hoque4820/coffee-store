@@ -11,12 +11,11 @@ It is my **first complete MERN stack project**, showcasing authentication, prote
 ---
 ## 📸 Screenshots
 
-![Homepage View]()
-![Add Coffee Page View]()
-![Update Coffee View]()
-![View Coffee View]()
-![Delete Coffee View]()
-![Register Page View]()
+![Homepage View](./coffee-store-client/public/home.png)
+![Add Coffee Page View](./coffee-store-client/public/add-coffee-page.png)
+![View Coffee View](./coffee-store-client/public/view-coffee-page.png)
+![Delete Coffee View](./coffee-store-client/public/delete-coffee.png)
+![Register Page View](./coffee-store-client/public/sign-up-page.png)
 
 ---
 ## ✨ Features
