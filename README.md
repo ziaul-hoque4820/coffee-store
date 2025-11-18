@@ -54,28 +54,6 @@ Admin features remain hidden until the user signs in.
 - 🚂 Express.js
 - 🍃 MongoDB (CRUD operations)
 
-## 📁 Project Folder Structure
-
-coffee-store/
-│
-├── client/            # React Frontend
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── context/
-│   │   ├── firebase/
-│   │   ├── layout/
-│   │   ├── routes/
-│   │   ├── utils/
-│   │   └── App.jsx
-│   │   └── main.jsx
-│   └── package.json
-│
-└── server/            # Node + Express Backend
-    ├── index.js
-    └── package.json
-
-
 ---
 
 **🔒 Authentication Behavior Notes**
