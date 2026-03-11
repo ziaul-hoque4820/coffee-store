@@ -67,7 +67,7 @@ they will be auto-redirected to the Sign-In page.
 
 **Ziaul Hoque Patwary**  
 📧 Email: [**ziaul.dev@gmail.com**] 
-🔗 GitHub: [ziaul-hoque4820](https://github.com/ziaul-hoque4820)
+🔗 GitHub: [ziaulhoquepatwary](https://github.com/ziaulhoquepatwary)
 
 ---
 
